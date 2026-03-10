@@ -46,23 +46,6 @@ void app_main(void)
     // Calibrate MPU6050 and get bias values
     mpu6050_calibrate_get_bias(I2C_MASTER_NUM, acc_bias, gyro_bias);
 
-    printf("\n--- KET QUA HIÊU CHUÂN ---\n");
-    
-    // In giá trị Bias của Gia tốc kế (m/s^2)
-    printf("Accel Bias X: %.4f m/s^2\n", acc_bias[0]);
-    printf("Accel Bias Y: %.4f m/s^2\n", acc_bias[1]);
-    printf("Accel Bias Z: %.4f m/s^2\n", acc_bias[2]);
-    
-    printf("--------------------------\n");
-
-    // In giá trị Bias của Con quay hồi chuyển (deg/s)
-    printf("Gyro Bias X:  %.4f deg/s\n", gyro_bias[0]);
-    printf("Gyro Bias Y:  %.4f deg/s\n", gyro_bias[1]);
-    printf("Gyro Bias Z:  %.4f deg/s\n", gyro_bias[2]);
-    
-    printf("--------------------------\n");
-
-    // Thêm vòng lặp vô tận để ESP32 không bị restart
     while(1) 
     {
         vTaskDelay(pdMS_TO_TICKS(1000));

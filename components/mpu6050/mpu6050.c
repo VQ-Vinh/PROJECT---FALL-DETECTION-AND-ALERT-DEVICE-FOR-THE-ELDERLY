@@ -57,8 +57,10 @@ void mpu6050_calibrate_get_bias(i2c_port_t i2c_num, float *acc_bias, float *gyro
     int32_t ax_sum = 0, ay_sum = 0, az_sum = 0;
     int32_t gx_sum = 0, gy_sum = 0, gz_sum = 0;
     const int samples = 1000;
+    int valid_samples = 0;
 
-    printf("Calibrating... Keep the sensor horizontal and still.\n");
+    printf("Bắt đầu cân chỉnh. Vui lòng giữ cảm biến cố định trên mặt phẳng ngang...\n");
+    vTaskDelay(pdMS_TO_TICKS(3000)); // Đợi 3 giây trước khi bắt đầu lấy mẫu
 
     for (int i = 0; i < samples; i++) {
         if (mpu6050_read_raw_data(i2c_num, &rx, &ry, &rz, &rgx, &rgy, &rgz) == ESP_OK) {
@@ -68,21 +70,27 @@ void mpu6050_calibrate_get_bias(i2c_port_t i2c_num, float *acc_bias, float *gyro
             gx_sum += rgx;
             gy_sum += rgy;
             gz_sum += rgz;
+            valid_samples++;
         }
-        vTaskDelay(pdMS_TO_TICKS(5)); 
+        vTaskDelay(pdMS_TO_TICKS(2)); 
     }
 
-    // Chuyển đổi trung bình Raw sang đơn vị vật lý m/s^2 và deg/s
-    acc_bias[0] = ((float)ax_sum / samples) / ACC_SCALE * GRAVITY;
-    acc_bias[1] = ((float)ay_sum / samples) / ACC_SCALE * GRAVITY;
-    // Trục Z chịu tác động của trọng trường khi nằm ngang (1g)
-    acc_bias[2] = (((float)az_sum / samples) / ACC_SCALE * GRAVITY) - GRAVITY;
+    if (valid_samples > 0) {
+        // Tính toán giá trị trung bình dựa trên số mẫu đọc được thực tế
+        acc_bias[0] = ((float)ax_sum / valid_samples) / ACC_SCALE * GRAVITY;
+        acc_bias[1] = ((float)ay_sum / valid_samples) / ACC_SCALE * GRAVITY;
+        // Trục Z: Khi nằm ngang sẽ chịu 1G (9.81m/s2), bias là phần chênh lệch so với G
+        acc_bias[2] = (((float)az_sum / valid_samples) / ACC_SCALE * GRAVITY) - GRAVITY;
 
-    gyro_bias[0] = ((float)gx_sum / samples) / GYRO_SCALE;
-    gyro_bias[1] = ((float)gy_sum / samples) / GYRO_SCALE;
-    gyro_bias[2] = ((float)gz_sum / samples) / GYRO_SCALE;
+        gyro_bias[0] = ((float)gx_sum / valid_samples) / GYRO_SCALE;
+        gyro_bias[1] = ((float)gy_sum / valid_samples) / GYRO_SCALE;
+        gyro_bias[2] = ((float)gz_sum / valid_samples) / GYRO_SCALE;
 
-    printf("Calibration Done!\n");
-    printf("Accel Bias (m/s^2): X:%.3f, Y:%.3f, Z:%.3f\n", acc_bias[0], acc_bias[1], acc_bias[2]);
-    printf("Gyro Bias (deg/s):  X:%.3f, Y:%.3f, Z:%.3f\n", gyro_bias[0], gyro_bias[1], gyro_bias[2]);
+        printf("Cân chỉnh hoàn tất! (Mẫu hợp lệ: %d/%d)\n", valid_samples, samples);
+        printf("Accel Bias (m/s^2): X:%.3f, Y:%.3f, Z:%.3f\n", acc_bias[0], acc_bias[1], acc_bias[2]);
+        printf("Gyro Bias (deg/s):  X:%.3f, Y:%.3f, Z:%.3f\n", gyro_bias[0], gyro_bias[1], gyro_bias[2]);
+    } else {
+        printf("Lỗi: Không thể đọc dữ liệu từ MPU6050. Kiểm tra kết nối I2C.\n");
+    }
+    
 }
