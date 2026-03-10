@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/MyBK/HK252/DA1/SRC/CODE/build/CMakeFiles/bootloader
+D:/MyBK/HK252/DA1/SRC/CODE/build/CMakeFiles/bootloader.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/CMakeFiles/bootloader-complete.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/MyBK/HK252/DA1/SRC/CODE/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
