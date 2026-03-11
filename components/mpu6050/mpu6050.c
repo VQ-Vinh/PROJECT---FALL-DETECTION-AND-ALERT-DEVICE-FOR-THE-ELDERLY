@@ -1,19 +1,24 @@
 #include "mpu6050.h"
 #include <stdio.h>
 
-// Định nghĩa bổ sung các thanh ghi cấu hình
+// Địa chỉ thanh ghi cấu hình cho Accel và Gyro
 #define MPU6050_REG_GYRO_CONFIG   0x1B
 #define MPU6050_REG_ACCEL_CONFIG  0x1C
 
-// Các hệ số tỷ lệ tương ứng với cấu hình trong hàm init
-#define ACC_SCALE 4096.0f   // Cho dải +- 8g
-#define GYRO_SCALE 131.0f   // Cho dải +- 250 deg/s
-#define GRAVITY 9.81f
+// Hệ số tỷ lệ để chuyển đổi raw data sang đơn vị vật lý (g và deg/s)
+#define ACC_SCALE   4096.0f     // Cho dải +- 8g
+#define GYRO_SCALE  131.0f      // Cho dải +- 250 deg/s
+#define GRAVITY     9.81f
+
+// Giá trị độ lệch ban đầu được đặt thành 0 và sẽ được cập nhật trong quá trình hiệu chuẩn (mpu6050_calibrate). 
+// Các hàm convert_*() sẽ sử dụng các giá trị này để điều chỉnh kết quả đầu ra.
+static float accel_bias[3] = {0.0f, 0.0f, 0.0f}; // (m/s^2)
+static float gyro_bias[3]  = {0.0f, 0.0f, 0.0f}; // (deg/s)
 
 esp_err_t mpu6050_init(i2c_port_t i2c_num) {
     esp_err_t ret;
 
-    // 1. Wake up: Ghi 0x00 vào PWR_MGMT_1 (0x6B)
+    // 1. Wake up: Ghi 0x00 vào thanh ghi PWR_MGMT_1 (0x6B)
     uint8_t pwr_data[] = {MPU6050_REG_PWR_MGMT_1, 0x00};
     ret = i2c_master_write_to_device(i2c_num, MPU6050_ADDR, pwr_data, 2, 1000 / portTICK_PERIOD_MS);
     if (ret != ESP_OK) return ret;
@@ -31,11 +36,11 @@ esp_err_t mpu6050_init(i2c_port_t i2c_num) {
 }
 
 esp_err_t mpu6050_read_raw_data(i2c_port_t i2c_num, int16_t *accel_x, int16_t *accel_y, int16_t *accel_z, 
-                               int16_t *gyro_x, int16_t *gyro_y, int16_t *gyro_z) {
+                                int16_t *gyro_x, int16_t *gyro_y, int16_t *gyro_z) {
     uint8_t data[14];
     uint8_t reg_addr = MPU6050_REG_ACCEL_XOUT_H;
 
-    // Write address then read 14 bytes (6 Accel, 2 Temp, 6 Gyro)
+    // 14 bytes: 6 cho accel (X, Y, Z), 2 cho nhiệt độ (bỏ qua), 6 cho gyro (X, Y, Z)
     esp_err_t ret = i2c_master_write_read_device(i2c_num, MPU6050_ADDR, &reg_addr, 1, data, 14, 1000 / portTICK_PERIOD_MS);
     if (ret != ESP_OK) return ret;
 
@@ -50,47 +55,80 @@ esp_err_t mpu6050_read_raw_data(i2c_port_t i2c_num, int16_t *accel_x, int16_t *a
     return ESP_OK;
 }
 
+void mpu6050_convert_accel(int16_t raw_x, int16_t raw_y, int16_t raw_z, float *accel_x, float *accel_y, float *accel_z) {
+    *accel_x = (raw_x / ACC_SCALE) * GRAVITY - accel_bias[0];
+    *accel_y = (raw_y / ACC_SCALE) * GRAVITY - accel_bias[1];
+    *accel_z = (raw_z / ACC_SCALE) * GRAVITY - accel_bias[2];
+}
+
+void mpu6050_convert_gyro(int16_t raw_x, int16_t raw_y, int16_t raw_z, float *gyro_x, float *gyro_y, float *gyro_z) {
+    *gyro_x = (raw_x / GYRO_SCALE) - gyro_bias[0];
+    *gyro_y = (raw_y / GYRO_SCALE) - gyro_bias[1];
+    *gyro_z = (raw_z / GYRO_SCALE) - gyro_bias[2];
+}
 
 
-void mpu6050_calibrate_get_bias(i2c_port_t i2c_num, float *acc_bias, float *gyro_bias) {
-    int16_t rx, ry, rz, rgx, rgy, rgz;
-    int32_t ax_sum = 0, ay_sum = 0, az_sum = 0;
-    int32_t gx_sum = 0, gy_sum = 0, gz_sum = 0;
-    const int samples = 1000;
-    int valid_samples = 0;
-
-    printf("Bắt đầu cân chỉnh. Vui lòng giữ cảm biến cố định trên mặt phẳng ngang...\n");
-    vTaskDelay(pdMS_TO_TICKS(3000)); // Đợi 3 giây trước khi bắt đầu lấy mẫu
+void mpu6050_calibrate(i2c_port_t i2c_num, float *accel_bias_out, float *gyro_bias_out) {
+    int16_t accel_x, accel_y, accel_z;
+    int16_t gyro_x, gyro_y, gyro_z;
+    float accel_x_g, accel_y_g, accel_z_g;
+    float gyro_x_dps, gyro_y_dps, gyro_z_dps;
+    float accel_x_sum = 0.0f, accel_y_sum = 0.0f, accel_z_sum = 0.0f;
+    float gyro_x_sum = 0.0f, gyro_y_sum = 0.0f, gyro_z_sum = 0.0f;
+    const int samples = 100;
 
     for (int i = 0; i < samples; i++) {
-        if (mpu6050_read_raw_data(i2c_num, &rx, &ry, &rz, &rgx, &rgy, &rgz) == ESP_OK) {
-            ax_sum += rx;
-            ay_sum += ry;
-            az_sum += rz;
-            gx_sum += rgx;
-            gy_sum += rgy;
-            gz_sum += rgz;
-            valid_samples++;
-        }
-        vTaskDelay(pdMS_TO_TICKS(2)); 
+        mpu6050_read_raw_data(i2c_num, &accel_x, &accel_y, &accel_z, &gyro_x, &gyro_y, &gyro_z);
+
+        // Chuyển đổi raw data sang đơn vị vật lý 
+        accel_x_g = (accel_x / ACC_SCALE) * GRAVITY;
+        accel_y_g = (accel_y / ACC_SCALE) * GRAVITY;
+        accel_z_g = (accel_z / ACC_SCALE) * GRAVITY;
+
+        gyro_x_dps = (gyro_x / GYRO_SCALE);
+        gyro_y_dps = (gyro_y / GYRO_SCALE);
+        gyro_z_dps = (gyro_z / GYRO_SCALE);
+
+        accel_x_sum += accel_x_g;
+        accel_y_sum += accel_y_g;
+        accel_z_sum += accel_z_g;
+        gyro_x_sum += gyro_x_dps;
+        gyro_y_sum += gyro_y_dps;
+        gyro_z_sum += gyro_z_dps;
+
+        vTaskDelay(5 / portTICK_PERIOD_MS); // Delay giữa các lần đọc
     }
 
-    if (valid_samples > 0) {
-        // Tính toán giá trị trung bình dựa trên số mẫu đọc được thực tế
-        acc_bias[0] = ((float)ax_sum / valid_samples) / ACC_SCALE * GRAVITY;
-        acc_bias[1] = ((float)ay_sum / valid_samples) / ACC_SCALE * GRAVITY;
-        // Trục Z: Khi nằm ngang sẽ chịu 1G (9.81m/s2), bias là phần chênh lệch so với G
-        acc_bias[2] = (((float)az_sum / valid_samples) / ACC_SCALE * GRAVITY) - GRAVITY;
+    // Tính giá trị trung bình và trừ đi trọng lực từ trục Z
+    float a_bias[3];
+    float g_bias[3];
 
-        gyro_bias[0] = ((float)gx_sum / valid_samples) / GYRO_SCALE;
-        gyro_bias[1] = ((float)gy_sum / valid_samples) / GYRO_SCALE;
-        gyro_bias[2] = ((float)gz_sum / valid_samples) / GYRO_SCALE;
+    a_bias[0] = accel_x_sum / samples;
+    a_bias[1] = accel_y_sum / samples;
+    a_bias[2] = accel_z_sum / samples - GRAVITY;
 
-        printf("Cân chỉnh hoàn tất! (Mẫu hợp lệ: %d/%d)\n", valid_samples, samples);
-        printf("Accel Bias (m/s^2): X:%.3f, Y:%.3f, Z:%.3f\n", acc_bias[0], acc_bias[1], acc_bias[2]);
-        printf("Gyro Bias (deg/s):  X:%.3f, Y:%.3f, Z:%.3f\n", gyro_bias[0], gyro_bias[1], gyro_bias[2]);
-    } else {
-        printf("Lỗi: Không thể đọc dữ liệu từ MPU6050. Kiểm tra kết nối I2C.\n");
+    g_bias[0] = gyro_x_sum / samples;
+    g_bias[1] = gyro_y_sum / samples;
+    g_bias[2] = gyro_z_sum / samples;
+
+    // Cập nhật giá trị bias vào output nếu con trỏ không NULL
+    if (accel_bias_out) {
+        accel_bias_out[0] = a_bias[0];
+        accel_bias_out[1] = a_bias[1];
+        accel_bias_out[2] = a_bias[2];
     }
-    
+    if (gyro_bias_out) {
+        gyro_bias_out[0] = g_bias[0];
+        gyro_bias_out[1] = g_bias[1];
+        gyro_bias_out[2] = g_bias[2];
+    }
+
+    // Lưu trữ giá trị bias vào biến toàn cục để sử dụng trong các hàm convert_*()
+    accel_bias[0] = a_bias[0];
+    accel_bias[1] = a_bias[1];
+    accel_bias[2] = a_bias[2];
+
+    gyro_bias[0] = g_bias[0];
+    gyro_bias[1] = g_bias[1];
+    gyro_bias[2] = g_bias[2];
 }
