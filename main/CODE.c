@@ -2,6 +2,7 @@
 #include "driver/i2c.h"
 #include "esp_log.h"
 #include "mpu6050.h"
+#include "roll_pitch.h"  
 
 #define I2C_MASTER_SCL_IO       22          
 #define I2C_MASTER_SDA_IO       21          
@@ -54,6 +55,10 @@ void app_main(void)
              acc_bias[0], acc_bias[1], acc_bias[2],
              gyro_bias[0], gyro_bias[1], gyro_bias[2]);
 
+
+    // Khởi tạo  roll_pitch module
+    roll_pitch_init();
+
     while(1) 
     {
         // Đọc dữ liệu thô
@@ -66,10 +71,14 @@ void app_main(void)
         mpu6050_convert_accel(accel_x, accel_y, accel_z, &accel_x_g, &accel_y_g, &accel_z_g);
         mpu6050_convert_gyro(gyro_x, gyro_y, gyro_z, &gyro_x_dps, &gyro_y_dps, &gyro_z_dps);
 
+        // Cập nhật roll và pitch
+        roll_pitch_update(accel_x_g, accel_y_g, accel_z_g, gyro_x_dps, gyro_y_dps, gyro_z_dps);
+
         // In ra console
         printf("Accel: X=%0.2f m/s^2, Y=%0.2f m/s^2, Z=%0.2f m/s^2\n", accel_x_g, accel_y_g, accel_z_g);
         printf("Gyro: X=%0.2f deg/s, Y=%0.2f deg/s, Z=%0.2f deg/s\n", gyro_x_dps, gyro_y_dps, gyro_z_dps);
+        printf("Roll: %0.2f deg, Pitch: %0.2f deg\n", get_roll(), get_pitch());
 
-        vTaskDelay(200 / portTICK_PERIOD_MS); // Delay between readings
+        vTaskDelay(200 / portTICK_PERIOD_MS);
     }
 }
