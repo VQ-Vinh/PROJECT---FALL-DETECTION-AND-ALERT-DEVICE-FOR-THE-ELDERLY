@@ -7,7 +7,7 @@
 
 // Hệ số tỷ lệ để chuyển đổi raw data sang đơn vị vật lý (g và deg/s)
 #define ACC_SCALE   4096.0f     // Cho dải +- 8g
-#define GYRO_SCALE  131.0f      // Cho dải +- 250 deg/s
+#define GYRO_SCALE  16.4f      // Cho dải +- 2000 deg/s
 #define GRAVITY     9.81f
 
 // Giá trị độ lệch ban đầu được đặt thành 0 và sẽ được cập nhật trong quá trình hiệu chuẩn (mpu6050_calibrate). 
