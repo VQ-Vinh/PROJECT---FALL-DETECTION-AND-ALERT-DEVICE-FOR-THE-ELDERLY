@@ -1,0 +1,2821 @@
+Command: D:\EMBEDDED\ESP\ESP32_IDF\Env\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\EMBEDDED\ESP\ESP32_IDF\Env\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\MyBK\HK252\DA1\SRC\CODE\build\CODE.elf D:\MyBK\HK252\DA1\SRC\CODE\build\bootloader\bootloader.elf --force-color -m 'D:\EMBEDDED\ESP\ESP32_IDF\Env\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\EMBEDDED\ESP\ESP32_IDF\Env\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'COM3'
+FLASH_BOOT)
+configsip:oot: Partition Table:
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 10 2026 22:04:19[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afe8h ( 45032) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001b010 vaddr=3ffb0000 size=02430h (  9264) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001d448 vaddr=40080000 size=02bd0h ( 11216) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=11d70h ( 73072) map[0m
+[0;32mI (138) esp_image: segment 4: paddr=00031d98 vaddr=40082bd0 size=0b95ch ( 47452) load[0m
+[0;32mI (157) esp_image: segment 5: paddr=0003d6fc vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Multicore app[0m
+[0;32mI (183) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (186) app_init: Application information:[0m
+[0;32mI (189) app_init: Project name:     CODE[0m
+[0;32mI (193) app_init: App version:      f8c1746-dirty[0m
+[0;32mI (198) app_init: Compile time:     Mar 23 2026 20:57:22[0m
+[0;32mI (203) app_init: ELF file SHA256:  907b839ab...[0m
+[0;32mI (207) app_init: ESP-IDF:          v5.5.2-dirty[0m
+[0;32mI (211) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (215) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (219) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (223) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (229) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (234) heap_init: At 3FFB2D20 len 0002D2E0 (180 KiB): DRAM[0m
+[0;32mI (240) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (250) heap_init: At 4008E52C len 00011AD4 (70 KiB): IRAM[0m
+[0;32mI (257) spi_flash: detected chip: generic[0m
+[0;32mI (259) spi_flash: flash io: dio[0m
+[0;33mW (262) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (274) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (295) main_task: Calling app_main()[0m
+[0;32mI (345) MPU6050: Calibration completed: accel bias [10.24, -0.34, -9.13] m/s^2, gyro bias [-77.08, 28.84, -173.71] deg/s[0m
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3154.82 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3163.62 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3159.90 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3168.18 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3174.97 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3144.49 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3149.29 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3162.49 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3174.36 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3172.44 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3144.98 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3167.65 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3153.06 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3158.62 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3169.62 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3159.94 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3159.40 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3165.85 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3163.94 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3178.67 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3171.11 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3167.20 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3151.91 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3134.99 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3163.60 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3134.93 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3150.76 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3166.12 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3153.25 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3174.02 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3147.18 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3127.90 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3179.55 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3142.97 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3166.00 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3155.88 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3164.64 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3155.07 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3163.55 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3161.13 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3154.91 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3144.91 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3140.92 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3172.58 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3179.31 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3170.66 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3166.02 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3174.39 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3138.98 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3160.88 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3160.28 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3153.70 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3139.45 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3156.72 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3143.01 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3173.55 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3159.51 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3149.54 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3158.66 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3155.56 deg/s
+---------------------------------------
+Total Accel: 9.96 m/s^2 (1.02 g)
+Total Gyro: 3053.79 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3146.32 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3177.07 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3142.22 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3171.31 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3124.41 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3165.50 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3161.45 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3162.72 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3148.11 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3163.32 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3165.12 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3156.97 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3136.44 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3165.91 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3171.29 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3161.85 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3146.88 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3156.43 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3166.71 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3177.51 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3163.17 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3145.08 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3156.26 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3159.44 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3145.17 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3152.57 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3146.15 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3159.04 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3154.45 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3162.22 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3159.90 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3169.72 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3164.71 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3184.73 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3130.65 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3153.44 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3145.98 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3141.18 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3129.51 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3185.35 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3135.57 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3135.03 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3137.54 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3172.54 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3164.08 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3160.54 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3143.13 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3149.99 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3145.82 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3131.03 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3149.97 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3136.50 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3159.97 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3114.44 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3124.80 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3152.86 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3135.74 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3133.85 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3165.82 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3141.57 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3154.89 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3179.97 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3169.45 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3150.10 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3144.07 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3177.62 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3173.59 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3161.21 deg/s
+---------------------------------------
+Total Accel: 10.00 m/s^2 (1.02 g)
+Total Gyro: 3138.35 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3145.46 deg/s
+---------------------------------------
+Total Accel: 9.66 m/s^2 (0.98 g)
+Total Gyro: 3127.30 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3167.62 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3153.53 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3165.26 deg/s
+---------------------------------------
+Total Accel: 9.68 m/s^2 (0.99 g)
+Total Gyro: 3169.99 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3141.37 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3157.02 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3156.82 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3141.12 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3144.45 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3152.05 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3165.47 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3108.58 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3151.40 deg/s
+---------------------------------------
+Total Accel: 9.67 m/s^2 (0.99 g)
+Total Gyro: 3230.26 deg/s
+---------------------------------------
+Total Accel: 9.99 m/s^2 (1.02 g)
+Total Gyro: 3136.07 deg/s
+---------------------------------------
+Total Accel: 10.01 m/s^2 (1.02 g)
+Total Gyro: 3151.17 deg/s
+---------------------------------------
+Total Accel: 9.62 m/s^2 (0.98 g)
+Total Gyro: 3163.01 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3124.32 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3143.76 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3126.62 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3134.68 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3164.54 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3161.50 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3155.27 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3139.84 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3152.18 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3165.45 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3139.34 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3159.09 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3159.88 deg/s
+---------------------------------------
+Total Accel: 9.68 m/s^2 (0.99 g)
+Total Gyro: 3168.38 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3170.41 deg/s
+---------------------------------------
+Total Accel: 10.17 m/s^2 (1.04 g)
+Total Gyro: 3100.44 deg/s
+---------------------------------------
+Total Accel: 9.55 m/s^2 (0.97 g)
+Total Gyro: 3159.13 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3144.12 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3154.62 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3139.12 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3192.89 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3146.21 deg/s
+---------------------------------------
+Total Accel: 9.99 m/s^2 (1.02 g)
+Total Gyro: 3114.51 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3158.79 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3147.75 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3144.54 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3172.18 deg/s
+---------------------------------------
+Total Accel: 9.65 m/s^2 (0.98 g)
+Total Gyro: 3145.11 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3180.11 deg/s
+---------------------------------------
+Total Accel: 10.00 m/s^2 (1.02 g)
+Total Gyro: 3117.47 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3142.40 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3116.57 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3161.66 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3186.36 deg/s
+---------------------------------------
+Total Accel: 9.66 m/s^2 (0.99 g)
+Total Gyro: 3195.27 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3168.55 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3163.85 deg/s
+---------------------------------------
+Total Accel: 9.95 m/s^2 (1.01 g)
+Total Gyro: 3147.01 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3183.73 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3140.69 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3220.67 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3168.68 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3196.15 deg/s
+---------------------------------------
+Total Accel: 9.57 m/s^2 (0.98 g)
+Total Gyro: 3253.77 deg/s
+---------------------------------------
+Total Accel: 10.03 m/s^2 (1.02 g)
+Total Gyro: 3212.45 deg/s
+---------------------------------------
+Total Accel: 10.07 m/s^2 (1.03 g)
+Total Gyro: 3102.66 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3161.27 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3156.92 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3163.31 deg/s
+---------------------------------------
+Total Accel: 9.99 m/s^2 (1.02 g)
+Total Gyro: 3198.64 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3134.58 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3156.93 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3119.78 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3159.50 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3176.19 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3202.94 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3092.68 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3139.05 deg/s
+---------------------------------------
+Total Accel: 10.09 m/s^2 (1.03 g)
+Total Gyro: 3099.10 deg/s
+---------------------------------------
+Total Accel: 10.09 m/s^2 (1.03 g)
+Total Gyro: 3151.95 deg/s
+---------------------------------------
+Total Accel: 10.09 m/s^2 (1.03 g)
+Total Gyro: 3161.04 deg/s
+---------------------------------------
+Total Accel: 9.99 m/s^2 (1.02 g)
+Total Gyro: 3112.71 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3168.07 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3143.26 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3128.17 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3194.32 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3149.77 deg/s
+---------------------------------------
+Total Accel: 10.09 m/s^2 (1.03 g)
+Total Gyro: 3032.07 deg/s
+---------------------------------------
+Total Accel: 10.61 m/s^2 (1.08 g)
+Total Gyro: 3079.57 deg/s
+---------------------------------------
+Total Accel: 9.97 m/s^2 (1.02 g)
+Total Gyro: 3204.47 deg/s
+---------------------------------------
+Total Accel: 10.02 m/s^2 (1.02 g)
+Total Gyro: 3163.33 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3176.31 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3186.09 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3096.00 deg/s
+---------------------------------------
+Total Accel: 10.10 m/s^2 (1.03 g)
+Total Gyro: 3141.39 deg/s
+---------------------------------------
+Total Accel: 9.58 m/s^2 (0.98 g)
+Total Gyro: 3164.51 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3164.90 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3161.17 deg/s
+---------------------------------------
+Total Accel: 10.05 m/s^2 (1.02 g)
+Total Gyro: 3117.12 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3139.63 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3145.25 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3110.07 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3123.52 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3140.35 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3090.90 deg/s
+---------------------------------------
+Total Accel: 10.19 m/s^2 (1.04 g)
+Total Gyro: 3096.28 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3148.84 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3152.95 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3122.24 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3200.23 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3144.93 deg/s
+---------------------------------------
+Total Accel: 9.99 m/s^2 (1.02 g)
+Total Gyro: 3306.82 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3169.02 deg/s
+---------------------------------------
+Total Accel: 9.66 m/s^2 (0.98 g)
+Total Gyro: 3214.44 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3164.14 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3008.52 deg/s
+---------------------------------------
+Total Accel: 9.64 m/s^2 (0.98 g)
+Total Gyro: 3113.06 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3184.75 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3185.27 deg/s
+---------------------------------------
+Total Accel: 8.99 m/s^2 (0.92 g)
+Total Gyro: 3360.38 deg/s
+---------------------------------------
+Total Accel: 10.17 m/s^2 (1.04 g)
+Total Gyro: 3248.21 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3175.34 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3162.60 deg/s
+---------------------------------------
+Total Accel: 9.59 m/s^2 (0.98 g)
+Total Gyro: 3206.57 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3164.52 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3184.87 deg/s
+---------------------------------------
+Total Accel: 9.46 m/s^2 (0.96 g)
+Total Gyro: 3159.26 deg/s
+---------------------------------------
+Total Accel: 10.38 m/s^2 (1.06 g)
+Total Gyro: 3169.33 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3100.15 deg/s
+---------------------------------------
+Total Accel: 10.37 m/s^2 (1.06 g)
+Total Gyro: 3066.53 deg/s
+---------------------------------------
+Total Accel: 9.48 m/s^2 (0.97 g)
+Total Gyro: 3225.95 deg/s
+---------------------------------------
+Total Accel: 9.68 m/s^2 (0.99 g)
+Total Gyro: 3179.37 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3116.33 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3159.13 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3176.83 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3124.62 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3137.88 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3229.70 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3123.65 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3153.26 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3198.38 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3170.69 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3155.18 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3163.34 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3153.17 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3144.40 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3169.29 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3173.03 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3152.38 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3162.63 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3144.82 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3156.70 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3152.40 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3137.40 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3153.33 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3155.91 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3122.17 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3170.52 deg/s
+---------------------------------------
+Total Accel: 9.62 m/s^2 (0.98 g)
+Total Gyro: 3281.03 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3175.10 deg/s
+---------------------------------------
+Total Accel: 10.39 m/s^2 (1.06 g)
+Total Gyro: 3206.32 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3171.78 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3156.21 deg/s
+---------------------------------------
+Total Accel: 9.51 m/s^2 (0.97 g)
+Total Gyro: 3185.98 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3140.70 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3164.08 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3145.95 deg/s
+---------------------------------------
+Total Accel: 9.67 m/s^2 (0.99 g)
+Total Gyro: 3177.10 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3156.39 deg/s
+---------------------------------------
+Total Accel: 10.09 m/s^2 (1.03 g)
+Total Gyro: 3169.28 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3148.33 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3137.71 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3165.65 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3141.46 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3153.16 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3182.69 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3150.75 deg/s
+---------------------------------------
+Total Accel: 9.41 m/s^2 (0.96 g)
+Total Gyro: 3144.07 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3159.91 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3124.35 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3164.67 deg/s
+---------------------------------------
+Total Accel: 9.66 m/s^2 (0.98 g)
+Total Gyro: 3123.21 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3149.34 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3149.81 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3152.83 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3151.07 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3177.03 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3202.96 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3153.64 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3076.76 deg/s
+---------------------------------------
+Total Accel: 9.98 m/s^2 (1.02 g)
+Total Gyro: 3162.84 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3172.24 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3128.25 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3137.68 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3166.13 deg/s
+---------------------------------------
+Total Accel: 9.97 m/s^2 (1.02 g)
+Total Gyro: 3171.38 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3162.95 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3138.75 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3164.66 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3179.85 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3151.00 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3140.01 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3154.86 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3112.18 deg/s
+---------------------------------------
+Total Accel: 9.96 m/s^2 (1.02 g)
+Total Gyro: 3149.02 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3156.48 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3165.76 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3137.64 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3174.43 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3173.29 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3142.24 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3190.88 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3166.05 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3155.09 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3139.24 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3156.32 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3154.58 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3154.11 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3171.32 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3142.95 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3147.74 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3147.36 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3184.07 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3152.34 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3155.85 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3189.02 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3166.91 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3147.20 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3135.37 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3177.90 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3150.65 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3156.15 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3158.94 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3160.22 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3175.58 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3160.54 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3149.11 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3186.49 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3153.41 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3163.75 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3152.30 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3166.75 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3169.54 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3159.44 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3162.57 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3131.36 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3164.99 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3158.70 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3172.49 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3157.55 deg/s
+---------------------------------------
+Total Accel: 9.93 m/s^2 (1.01 g)
+Total Gyro: 3148.03 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3140.94 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3156.95 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3162.70 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3172.43 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3170.97 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3177.34 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3165.26 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3159.24 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3129.08 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3144.38 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3148.62 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3149.91 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3166.50 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3137.48 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3153.03 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3146.53 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3151.15 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3135.53 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3125.27 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3153.59 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3152.39 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3148.74 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3172.10 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3173.40 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3148.76 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3157.90 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3150.27 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3172.26 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3144.08 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3141.55 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3169.38 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3153.26 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3155.64 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3159.83 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3163.20 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3152.01 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3170.47 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3156.58 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3146.93 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3172.68 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3156.56 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3154.52 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3155.63 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3168.81 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3167.70 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3177.25 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3162.71 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3171.06 deg/s
+---------------------------------------
+Total Accel: 9.93 m/s^2 (1.01 g)
+Total Gyro: 3180.88 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3142.76 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3179.24 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3153.04 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3167.77 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3151.30 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3164.12 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3167.56 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3156.87 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3132.07 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3163.82 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3152.89 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3158.30 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3166.82 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3150.26 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3169.07 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3151.92 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3140.73 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3157.97 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3141.54 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3167.26 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3170.09 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3135.64 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3146.52 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3145.98 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3144.10 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3139.61 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3138.90 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3126.31 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3137.53 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3150.43 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3171.40 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3133.66 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3146.41 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3161.85 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3158.08 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3149.71 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3131.11 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3145.74 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3159.78 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3163.80 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3146.88 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3149.99 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3159.44 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3156.71 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3169.44 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3176.29 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3158.39 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3150.54 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3152.07 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3159.44 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3169.51 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3161.61 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3139.57 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3165.26 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3168.09 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3135.13 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3153.55 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3143.12 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3178.05 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3179.72 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3146.62 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3155.57 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3172.46 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3124.46 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3162.36 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3144.76 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3146.29 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3176.38 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3157.12 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3159.37 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3157.54 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3163.27 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3172.68 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3160.32 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3182.76 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3152.71 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3145.47 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3154.58 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3156.44 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3151.20 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3158.31 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3154.41 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3165.56 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3160.74 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3182.94 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3175.82 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3140.02 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3158.74 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3156.11 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3142.36 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3180.02 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3122.89 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3137.52 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3152.61 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3175.19 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3162.12 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3138.31 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3140.68 deg/s
+---------------------------------------
+Total Accel: 9.93 m/s^2 (1.01 g)
+Total Gyro: 3153.01 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3145.17 deg/s
+---------------------------------------
+Total Accel: 9.93 m/s^2 (1.01 g)
+Total Gyro: 3133.43 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3152.87 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3162.59 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3151.73 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3126.98 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3142.67 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3172.52 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3147.76 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3164.54 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3134.54 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3157.28 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3167.23 deg/s
+---------------------------------------
+Total Accel: 10.00 m/s^2 (1.02 g)
+Total Gyro: 3187.98 deg/s
+---------------------------------------
+Total Accel: 9.94 m/s^2 (1.01 g)
+Total Gyro: 3149.13 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3160.84 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3156.34 deg/s
+---------------------------------------
+Total Accel: 9.66 m/s^2 (0.98 g)
+Total Gyro: 3141.62 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3159.80 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3183.86 deg/s
+---------------------------------------
+Total Accel: 9.62 m/s^2 (0.98 g)
+Total Gyro: 3159.67 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3174.93 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3129.55 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3163.28 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3118.89 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3119.12 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3285.14 deg/s
+---------------------------------------
+Total Accel: 10.02 m/s^2 (1.02 g)
+Total Gyro: 3805.89 deg/s
+---------------------------------------
+Total Accel: 10.02 m/s^2 (1.02 g)
+Total Gyro: 3143.94 deg/s
+---------------------------------------
+Total Accel: 10.01 m/s^2 (1.02 g)
+Total Gyro: 3155.25 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3146.15 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3183.74 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3160.91 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3159.75 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3146.23 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3138.51 deg/s
+---------------------------------------
+Total Accel: 9.55 m/s^2 (0.97 g)
+Total Gyro: 3166.62 deg/s
+---------------------------------------
+Total Accel: 9.93 m/s^2 (1.01 g)
+Total Gyro: 3172.52 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3147.60 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3150.38 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3132.25 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3150.05 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3177.07 deg/s
+---------------------------------------
+Total Accel: 9.96 m/s^2 (1.01 g)
+Total Gyro: 3165.47 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3174.09 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3156.48 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3181.45 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3126.83 deg/s
+---------------------------------------
+Total Accel: 9.98 m/s^2 (1.02 g)
+Total Gyro: 3134.90 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3145.97 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3160.63 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3175.58 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3157.72 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3146.61 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3160.53 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3141.31 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3136.57 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3162.69 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3160.18 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3157.65 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3154.46 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3176.06 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3148.60 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3160.07 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3168.27 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3154.68 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3148.58 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3164.80 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3170.93 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3171.93 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3167.20 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3176.24 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3152.55 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3169.48 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3143.95 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3158.24 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3170.05 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3173.17 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3152.72 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3169.00 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3161.70 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3156.02 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3167.58 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3159.97 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3156.07 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3136.97 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3145.98 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3147.01 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3155.37 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3171.97 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3151.05 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3144.07 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3179.99 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3156.36 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3155.83 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3140.53 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3137.75 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3142.06 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3150.03 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3157.52 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3130.77 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3136.08 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3168.12 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3149.04 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3158.77 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3158.42 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3153.28 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3153.27 deg/s
+---------------------------------------
+Total Accel: 9.96 m/s^2 (1.02 g)
+Total Gyro: 3154.65 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3159.28 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3131.15 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3126.50 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3142.77 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3151.85 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3153.75 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3146.60 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3148.95 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3161.73 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3148.51 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3143.11 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3126.86 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3168.53 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3124.30 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3154.66 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3161.09 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3146.19 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3153.06 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3156.30 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3156.31 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3163.21 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3168.88 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3151.68 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3157.89 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3163.44 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3156.23 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3159.59 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3176.47 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3154.08 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3140.76 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3143.83 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3145.21 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3159.47 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3172.87 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3162.76 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3146.55 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3152.49 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3146.35 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3165.34 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3155.47 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3150.41 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3163.87 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3159.47 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3162.06 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3151.96 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3148.46 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3160.67 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3162.03 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3147.84 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3160.99 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3159.47 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3150.99 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3171.83 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3178.65 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3161.73 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3141.49 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3152.00 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3160.78 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3171.12 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3137.92 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3132.38 deg/s
+---------------------------------------
+Total Accel: 9.74 m/s^2 (0.99 g)
+Total Gyro: 3157.01 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3155.56 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3168.27 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3156.13 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3142.03 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3178.57 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3128.08 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3173.39 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3144.28 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3157.36 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3148.28 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3159.36 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3158.00 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3153.30 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3164.90 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3149.71 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3156.08 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3149.05 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3132.30 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3167.33 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3165.74 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3155.32 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3151.65 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3154.01 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3153.93 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3172.80 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3164.06 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3170.78 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3166.85 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3183.57 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3154.82 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3145.47 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3160.83 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3153.54 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3147.74 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3139.41 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3148.02 deg/s
+---------------------------------------
+Total Accel: 10.11 m/s^2 (1.03 g)
+Total Gyro: 3125.38 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3146.17 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3148.18 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3165.61 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3141.14 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3162.25 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3151.09 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3190.38 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3170.01 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3148.35 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3174.88 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3139.37 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3146.28 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3168.35 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3161.24 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3158.02 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3150.50 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3135.66 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3137.46 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3140.27 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3145.84 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3168.74 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3161.64 deg/s
+---------------------------------------
+Total Accel: 9.72 m/s^2 (0.99 g)
+Total Gyro: 3174.73 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3171.56 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3141.14 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3162.06 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3145.78 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3144.46 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3166.43 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3141.06 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3153.39 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3130.70 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3168.23 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3163.47 deg/s
+---------------------------------------
+Total Accel: 9.97 m/s^2 (1.02 g)
+Total Gyro: 3175.79 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3145.15 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3153.21 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3157.58 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3168.78 deg/s
+---------------------------------------
+Total Accel: 9.93 m/s^2 (1.01 g)
+Total Gyro: 3169.55 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3152.20 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3157.60 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3160.64 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3135.85 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3157.43 deg/s
+---------------------------------------
+Total Accel: 9.68 m/s^2 (0.99 g)
+Total Gyro: 3186.79 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3141.91 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3141.11 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3163.75 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3157.87 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3154.26 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3175.64 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3147.01 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3128.74 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3124.80 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3152.94 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3135.12 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3144.05 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3137.67 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3137.51 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3169.34 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3146.18 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3149.76 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3160.24 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3146.82 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3164.93 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3132.02 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3157.31 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3165.50 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3134.70 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3135.92 deg/s
+---------------------------------------
+Total Accel: 9.69 m/s^2 (0.99 g)
+Total Gyro: 3142.56 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3159.91 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3151.31 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3166.02 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3160.20 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3167.69 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3159.03 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3170.37 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3149.27 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3171.23 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3156.00 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3151.39 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3176.69 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3167.70 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3143.16 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3138.06 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3167.18 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3149.98 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3136.05 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3146.22 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3167.36 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3164.81 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3130.75 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3157.96 deg/s
+---------------------------------------
+Total Accel: 9.96 m/s^2 (1.02 g)
+Total Gyro: 3120.08 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3156.49 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3156.80 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3149.86 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3152.62 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3141.33 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3164.10 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3158.28 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3151.31 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3153.12 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3168.11 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3156.94 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3150.22 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3167.06 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3146.91 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.00 g)
+Total Gyro: 3161.57 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3158.64 deg/s
+---------------------------------------
+Total Accel: 9.91 m/s^2 (1.01 g)
+Total Gyro: 3171.07 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3146.73 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3158.69 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3149.95 deg/s
+---------------------------------------
+Total Accel: 9.89 m/s^2 (1.01 g)
+Total Gyro: 3173.60 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3143.32 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3156.95 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3136.31 deg/s
+---------------------------------------
+Total Accel: 9.75 m/s^2 (0.99 g)
+Total Gyro: 3148.73 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3126.60 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3173.82 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3134.04 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3155.92 deg/s
+---------------------------------------
+Total Accel: 9.78 m/s^2 (1.00 g)
+Total Gyro: 3135.64 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3127.53 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3167.91 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3142.31 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3133.88 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3117.26 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3137.54 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3161.59 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3153.13 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3138.20 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3149.60 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3142.94 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3156.77 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3135.73 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3154.17 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3157.21 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^2 (1.01 g)
+Total Gyro: 3154.21 deg/s
+---------------------------------------
+Total Accel: 9.98 m/s^2 (1.02 g)
+Total Gyro: 3071.97 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3131.59 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3164.49 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3151.06 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3161.49 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3138.15 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3158.77 deg/s
+---------------------------------------
+Total Accel: 9.82 m/s^2 (1.00 g)
+Total Gyro: 3146.54 deg/s
+---------------------------------------
+Total Accel: 9.70 m/s^2 (0.99 g)
+Total Gyro: 3169.77 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3152.17 deg/s
+---------------------------------------
+Total Accel: 9.71 m/s^2 (0.99 g)
+Total Gyro: 3143.28 deg/s
+---------------------------------------
+Total Accel: 9.90 m/s^2 (1.01 g)
+Total Gyro: 3134.47 deg/s
+---------------------------------------
+Total Accel: 9.77 m/s^2 (1.00 g)
+Total Gyro: 3163.59 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (0.99 g)
+Total Gyro: 3154.23 deg/s
+---------------------------------------
+Total Accel: 9.80 m/s^2 (1.00 g)
+Total Gyro: 3140.49 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3123.61 deg/s
+---------------------------------------
+Total Accel: 9.76 m/s^2 (1.00 g)
+Total Gyro: 3123.50 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3161.03 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3143.32 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3176.54 deg/s
+---------------------------------------
+Total Accel: 9.54 m/s^2 (0.97 g)
+Total Gyro: 3182.80 deg/s
+---------------------------------------
+Total Accel: 9.92 m/s^2 (1.01 g)
+Total Gyro: 3139.10 deg/s
+---------------------------------------
+Total Accel: 9.81 m/s^2 (1.00 g)
+Total Gyro: 3125.73 deg/s
+---------------------------------------
+Total Accel: 9.65 m/s^2 (0.98 g)
+Total Gyro: 3119.90 deg/s
+---------------------------------------
+Total Accel: 9.53 m/s^2 (0.97 g)
+Total Gyro: 3231.93 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3153.39 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3147.88 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3138.16 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3160.30 deg/s
+---------------------------------------
+Total Accel: 9.84 m/s^2 (1.00 g)
+Total Gyro: 3161.52 deg/s
+---------------------------------------
+Total Accel: 9.37 m/s^2 (0.96 g)
+Total Gyro: 3171.20 deg/s
+---------------------------------------
+Total Accel: 9.51 m/s^2 (0.97 g)
+Total Gyro: 3186.79 deg/s
+---------------------------------------
+Total Accel: 9.58 m/s^2 (0.98 g)
+Total Gyro: 3160.30 deg/s
+---------------------------------------
+Total Accel: 10.05 m/s^2 (1.02 g)
+Total Gyro: 3126.65 deg/s
+---------------------------------------
+Total Accel: 9.79 m/s^2 (1.00 g)
+Total Gyro: 3128.56 deg/s
+---------------------------------------
+Total Accel: 9.87 m/s^2 (1.01 g)
+Total Gyro: 3137.75 deg/s
+---------------------------------------
+Total Accel: 9.88 m/s^2 (1.01 g)
+Total Gyro: 3140.42 deg/s
+---------------------------------------
+Total Accel: 9.95 m/s^2 (1.01 g)
+Total Gyro: 3124.89 deg/s
+---------------------------------------
+Total Accel: 9.83 m/s^2 (1.00 g)
+Total Gyro: 3132.95 deg/s
+---------------------------------------
+Total Accel: 9.73 m/s^2 (0.99 g)
+Total Gyro: 3167.73 deg/s
+---------------------------------------
+Total Accel: 9.85 m/s^2 (1.00 g)
+Total Gyro: 3155.94 deg/s
+---------------------------------------
+Total Accel: 9.86 m/s^

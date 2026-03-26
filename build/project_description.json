@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "CODE",
-    "project_version":    "18ea654-dirty",
+    "project_version":    "f8c1746-dirty",
     "project_path":       "D:/MyBK/HK252/DA1/SRC/CODE",
     "idf_path":           "D:/EMBEDDED/ESP/ESP32_IDF/Env/Espressif/frameworks/esp-idf-v5.5.2",
     "build_dir":          "D:/MyBK/HK252/DA1/SRC/CODE/build",

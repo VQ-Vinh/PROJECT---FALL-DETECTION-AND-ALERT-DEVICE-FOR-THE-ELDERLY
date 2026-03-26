@@ -30,5 +30,18 @@ void mpu6050_convert_gyro(int16_t raw_x, int16_t raw_y, int16_t raw_z, float *gy
  *                      (deg/s).  May be NULL.
  */
 void mpu6050_calibrate(i2c_port_t i2c_num, float *accel_bias, float *gyro_bias);
+/**
+ * @brief Calculate total acceleration magnitude (vector sum)
+ *
+ * Computes: A = sqrt(ax² + ay² + az²)
+ *
+ * @param accel_x Accelerometer X (m/s^2)
+ * @param accel_y Accelerometer Y (m/s^2)
+ * @param accel_z Accelerometer Z (m/s^2)
+ * @param accel_g Pointer to store result in g (optional, can be NULL)
+ * @return Total acceleration magnitude (m/s^2)
+ */
+float mpu6050_get_total_accel(float accel_x, float accel_y, float accel_z, float *accel_g);
+float mpu6050_get_total_gyro(float gyro_x, float gyro_y, float gyro_z);
 
 #endif

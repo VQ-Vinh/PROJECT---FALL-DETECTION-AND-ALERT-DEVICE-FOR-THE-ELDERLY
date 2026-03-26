@@ -1,5 +1,6 @@
 #include "mpu6050.h"
 #include <stdio.h>
+#include <math.h>
 
 // Địa chỉ thanh ghi cấu hình cho Accel và Gyro
 #define MPU6050_REG_GYRO_CONFIG   0x1B
@@ -131,4 +132,17 @@ void mpu6050_calibrate(i2c_port_t i2c_num, float *accel_bias_out, float *gyro_bi
     gyro_bias[0] = g_bias[0];
     gyro_bias[1] = g_bias[1];
     gyro_bias[2] = g_bias[2];
+}
+
+float mpu6050_get_total_accel(float accel_x, float accel_y, float accel_z, float *accel_g) {
+    float total_mps2 = sqrtf(accel_x * accel_x + accel_y * accel_y + accel_z * accel_z);
+    if (accel_g != NULL) {
+        *accel_g = total_mps2 / GRAVITY;
+    }
+    return total_mps2;
+}
+
+float mpu6050_get_total_gyro(float gyro_x, float gyro_y, float gyro_z) {
+    float total_gyro = sqrtf(gyro_x * gyro_x + gyro_y * gyro_y + gyro_z * gyro_z);
+    return total_gyro;
 }
